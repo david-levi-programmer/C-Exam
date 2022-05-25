@@ -28,6 +28,7 @@ void Clear()
 	std::cout << "1: Yes\n";
 	std::cout << "2: No\n";
 	std::cin >> choice;
+
 	switch (choice)
 	{
 	case 1:
@@ -38,6 +39,7 @@ void Clear()
 		std::cout << "Alright then...?" << std::endl;
 		break;
 	default:
+		std::cout << "Invalid option." << std::endl;
 		break;
 	}
 }
@@ -48,6 +50,7 @@ void Search()
 	std::cout << "Type in what you're looking for:";
 	std::cin >> look;
 	size_t index = text.find(look);
+
 	if (text.find(look) != std::string::npos)
 	{
 		std::cout << "It's in position "<< index << std::endl;
