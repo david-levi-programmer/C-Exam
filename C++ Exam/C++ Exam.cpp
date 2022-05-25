@@ -77,6 +77,12 @@ void Lower()
 	std::transform(text.begin(), text.end(), text.begin(), tolower);
 }
 
+void Size()
+{
+	size_t wordCount = text.size();
+	std::cout << "Your word is " << wordCount << " letters long." << std::endl;
+}
+
 int main()
 {
     int choice;
@@ -91,6 +97,7 @@ int main()
     std::cout << "4: Search for text\n";
 	std::cout << "5: MAKE IT ALL CAPS\n";
 	std::cout << "6: make it all lowercase\n";
+	std::cout << "7: Tell me how long it is\n";
     std::cin >> choice;
 
     switch (choice)
@@ -112,6 +119,9 @@ int main()
 		break;
 	case 6:
 		Lower();
+		break;
+	case 7:
+		Size();
 		break;
     default:
 		std::cout << "Invalid option." << std::endl;
