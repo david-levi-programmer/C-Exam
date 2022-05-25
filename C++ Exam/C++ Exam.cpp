@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 
 std::string text;
 
@@ -62,6 +63,20 @@ void Search()
 	}
 }
 
+void Upper()
+{
+	std::cout << "SURE THING, DUDE\n";
+	std::cout << "OK, HOW'S IT LOOK?" << std::endl;
+	std::transform(text.begin(), text.end(), text.begin(), toupper);
+}
+
+void Lower()
+{
+	std::cout << "yeah, no problem\n";
+	std::cout << "here:" << std::endl;
+	std::transform(text.begin(), text.end(), text.begin(), tolower);
+}
+
 int main()
 {
     int choice;
@@ -74,6 +89,8 @@ int main()
     std::cout << "2: Remove text\n";
     std::cout << "3: Delete all text\n";
     std::cout << "4: Search for text\n";
+	std::cout << "5: MAKE IT ALL CAPS\n";
+	std::cout << "6: make it all lowercase\n";
     std::cin >> choice;
 
     switch (choice)
@@ -90,6 +107,12 @@ int main()
     case 4:
         Search();
         break;
+	case 5:
+		Upper();
+		break;
+	case 6:
+		Lower();
+		break;
     default:
 		std::cout << "Invalid option." << std::endl;
         break;
