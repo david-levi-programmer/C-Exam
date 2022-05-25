@@ -5,7 +5,8 @@ std::string text;
 void Insert()
 {
 	std::string more;
-	std::cout << "Type in what you want to add:";
+	std::cout << "Type in what you want to add.\n";
+	std::cout << "It will be inserted into the end of the word:";
 	std::cin >> more;
 	text += more;
 }
@@ -17,6 +18,7 @@ void Remove()
 	std::cin >> less;
 	size_t look = text.find(less);
 	text.erase(look);
+	std::cout << "Here you go:" << std::endl;
 }
 
 void Clear()
@@ -30,7 +32,7 @@ void Clear()
 	{
 	case 1:
 		text.erase();
-		std::cout << "It's done.";
+		std::cout << "It's done. Bye, then.";
 		break;
 	case 2:
 		break;
@@ -45,13 +47,12 @@ void Search()
 	std::cout << "Type in what you're looking for:";
 	std::cin >> look;
 	size_t index = text.find(look);
-	std::cout << index << std::endl;
+	std::cout << "It's in position "<< index << std::endl;
 	if (text.find(look) == std::string::npos)
 	{
-		std::cout << "Couldn't find it";
+		std::cout << "Couldn't find it, sorry.";
 	}
 }
-
 
 int main()
 {
@@ -60,10 +61,10 @@ int main()
     std::cout << "Type in a word:" << std::endl;
     std::cin >> text;
 
-    std::cout << "What would you like to do?" << std::endl;
+    std::cout << "Now, what would you like to do with that word?" << std::endl;
     std::cout << "1: Add text\n";
     std::cout << "2: Remove text\n";
-    std::cout << "3: Clear all text\n";
+    std::cout << "3: Delete all text\n";
     std::cout << "4: Search for text\n";
     std::cin >> choice;
 
@@ -85,6 +86,7 @@ int main()
 		std::cout << "Invalid option." << std::endl;
         break;
     }
+
     std::cout << text << std::endl;
     system("PAUSE");
 }
