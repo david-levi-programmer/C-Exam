@@ -18,13 +18,5 @@
     <ClCompile Include="C++ Exam.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TextString.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="TextString.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

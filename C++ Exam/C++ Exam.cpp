@@ -1,15 +1,64 @@
 #include <iostream>
-#include "TextString.h"
 
-TextString m_text;
+std::string text;
+
+void Insert()
+{
+	std::string more;
+	std::cout << "Type in what you want to add:";
+	std::cin >> more;
+	text += more;
+}
+
+void Remove()
+{
+	std::string less;
+	std::cout << "Type in what you want to remove:";
+	std::cin >> less;
+	size_t look = text.find(less);
+	text.erase(look);
+}
+
+void Clear()
+{
+	int choice;
+	std::cout << "Are you sure?\n";
+	std::cout << "1: Yes\n";
+	std::cout << "2: No\n";
+	std::cin >> choice;
+	switch (choice)
+	{
+	case 1:
+		text.erase();
+		std::cout << "It's done.";
+		break;
+	case 2:
+		break;
+	default:
+		break;
+	}
+}
+
+void Search()
+{
+	std::string look;
+	std::cout << "Type in what you're looking for:";
+	std::cin >> look;
+	size_t index = text.find(look);
+	std::cout << index << std::endl;
+	if (text.find(look) == std::string::npos)
+	{
+		std::cout << "Couldn't find it";
+	}
+}
+
 
 int main()
 {
     int choice;
-    std::string word;
     
     std::cout << "Type in a word:" << std::endl;
-    std::cin >> word;
+    std::cin >> text;
 
     std::cout << "What would you like to do?" << std::endl;
     std::cout << "1: Add text\n";
@@ -21,21 +70,21 @@ int main()
     switch (choice)
     {
     case 1:
-        m_text.Insert();
+        Insert();
         break;
     case 2:
-        m_text.Remove();
+        Remove();
         break;
     case 3:
-        m_text.Clear();
+        Clear();
         break;
     case 4:
-        m_text.Search();
+        Search();
         break;
     default:
-        std::cout << "Try again";
+		std::cout << "Invalid option." << std::endl;
         break;
     }
-    std::cout << word << std::endl;
+    std::cout << text << std::endl;
     system("PAUSE");
 }
