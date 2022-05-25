@@ -63,7 +63,7 @@ int main()
 {
     int choice;
     
-    std::cout << "Type in a word:" << std::endl;
+    std::cout << "Type in a word. Just one though:" << std::endl;
     std::cin >> text;
 
     std::cout << "Now, what would you like to do with that word?" << std::endl;
