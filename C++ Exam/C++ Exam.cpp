@@ -35,6 +35,7 @@ void Clear()
 		std::cout << "It's done. Bye, then.";
 		break;
 	case 2:
+		std::cout << "Alright then...?" << std::endl;
 		break;
 	default:
 		break;
@@ -47,10 +48,14 @@ void Search()
 	std::cout << "Type in what you're looking for:";
 	std::cin >> look;
 	size_t index = text.find(look);
-	std::cout << "It's in position "<< index << std::endl;
-	if (text.find(look) == std::string::npos)
+	if (text.find(look) != std::string::npos)
 	{
-		std::cout << "Couldn't find it, sorry.";
+		std::cout << "It's in position "<< index << std::endl;
+	}
+
+	else if (text.find(look) == std::string::npos)
+	{
+		std::cout << "Couldn't find it, sorry." << std::endl;
 	}
 }
 
